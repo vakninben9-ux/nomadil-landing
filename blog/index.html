@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>בלוג NomadIL — מדריכים לטייל הישראלי</title>
+<meta name="description" content="מדריכים, טיפים, וסיפורי דרך לטייל הישראלי: תאילנד, וייטנאם, פרו, בוליביה, הודו, וכל מה שביניהם." />
+<meta name="theme-color" content="#070B14" />
+<meta property="og:title" content="בלוג NomadIL" />
+<meta property="og:description" content="מדריכים מקצועיים לטייל הישראלי — תקציב, מסלולים, פעילויות וטיפים." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#070B14; --surface:#0F1524; --primary:#3A86FF; --accent:#06D6A0;
+    --yellow:#FFBE0B; --danger:#FF006E;
+    --text:#fff; --muted:#A8B2C4; --border:#1F2740;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Heebo",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{padding:24px 0;border-bottom:1px solid var(--border)}
+  .header-row{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-size:24px;font-weight:900;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-back{color:var(--muted);font-size:14px;font-weight:600}
+  .nav-back:hover{color:var(--text)}
+
+  .hero{text-align:center;padding:56px 0 40px}
+  .hero-eyebrow{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+  .hero h1{font-size:clamp(28px,5vw,42px);font-weight:900;letter-spacing:-1px;line-height:1.2;margin-top:8px}
+  .hero p{color:var(--muted);font-size:16px;max-width:560px;margin:14px auto 0}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:24px 0 80px}
+  .post{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px;transition:.2s;display:flex;flex-direction:column;gap:10px;min-height:200px}
+  .post:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .post-cat{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+  .post-title{color:var(--text);font-size:19px;font-weight:800;line-height:1.3;margin:2px 0 8px}
+  .post-desc{color:var(--muted);font-size:14px;flex:1;line-height:1.55}
+  .post-meta{color:var(--muted);font-size:12px;margin-top:6px}
+
+  footer{padding:32px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a href="/" class="brand">NomadIL</a>
+    <a href="/" class="nav-back">← דף הבית</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-eyebrow">הבלוג</div>
+    <h1>מדריכים לטייל הישראלי</h1>
+    <p>תקציב, מסלולים, פעילויות וטיפים מהשטח — כתובים על ידי מטיילים, לא ע"י סוכני נסיעות.</p>
+  </section>
+
+  <div class="grid">
+
+    <a class="post" href="/blog/full-moon-party.html">
+      <div class="post-cat">מסיבות · תאילנד</div>
+      <h2 class="post-title">Full Moon Party — כל מה שצריך לדעת לפני שיוצאים</h2>
+      <p class="post-desc">המסיבה האייקונית באסיה: מתי, איך מגיעים, כמה עולה, מה ללבוש, ואיך לא לדפוק את זה.</p>
+      <div class="post-meta">6 דקות · יוני 2026</div>
+    </a>
+
+    <a class="post" href="/blog/inca-trail.html">
+      <div class="post-cat">טרקים · פרו</div>
+      <h2 class="post-title">Inca Trail — תכנון מ-0 ל-100</h2>
+      <p class="post-desc">הטרק הקלאסי למאצ׳ו פיצ׳ו: מתי להזמין, חלופות, אקלימציה, ומה לקחת בתיק.</p>
+      <div class="post-meta">8 דקות · יוני 2026</div>
+    </a>
+
+    <a class="post" href="/blog/south-america-budget.html">
+      <div class="post-cat">תקציב · דרום אמריקה</div>
+      <h2 class="post-title">כמה באמת עולה טיול לדרום אמריקה?</h2>
+      <p class="post-desc">פילוח מפורט: לפי מדינה, סגנון ועונה. עם מספרים אמיתיים, לא משערים.</p>
+      <div class="post-meta">9 דקות · יוני 2026</div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  NomadIL · <a href="/">בית</a> · <a href="/blog/">בלוג</a> · <a href="mailto:vakninben9@gmail.com">צור קשר</a>
+</footer>
+
+</body>
+</html>
