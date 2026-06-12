@@ -16,10 +16,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#070B14; --surface:#0F1524; --primary:#3A86FF; --accent:#06D6A0;
+    --bg:#070B14; --surface:#0F1524; --surface-2:#141C30;
+    --primary:#3A86FF; --accent:#06D6A0; --action:#F97316;
     --yellow:#FFBE0B; --danger:#FF006E;
     --text:#fff; --muted:#A8B2C4; --border:#1F2740;
-    --radius-lg:18px; --radius-md:12px;
+    --radius-lg:18px; --radius-md:12px; --radius-xl:24px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -54,7 +55,9 @@
   .btn-primary{background:var(--accent);color:var(--bg);box-shadow:0 8px 30px rgba(6,214,160,.35)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(6,214,160,.45)}
   .btn-ghost{border-color:var(--border);color:var(--text);background:transparent}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-ghost:hover{border-color:var(--action);color:var(--action)}
+  .btn-action{background:var(--action);color:#fff;box-shadow:0 8px 30px rgba(249,115,22,.35)}
+  .btn-action:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(249,115,22,.45)}
 
   /* Waitlist */
   .waitlist{margin:32px auto 0;max-width:480px;display:flex;gap:8px;flex-wrap:wrap}
@@ -76,16 +79,43 @@
   .section-title{font-size:clamp(28px,4.5vw,42px);font-weight:900;text-align:center;letter-spacing:-1px;margin-top:8px;line-height:1.15}
   .section-sub{color:var(--muted);text-align:center;max-width:560px;margin:14px auto 0;font-size:16px}
 
-  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:48px}
-  .feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:border .2s,transform .2s}
-  .feature:hover{border-color:var(--accent);transform:translateY(-3px)}
+  /* Bento grid — varied sizes, hero features bigger */
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:48px;grid-auto-flow:dense}
+  @media (max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.bento{grid-template-columns:1fr}}
+  .feature{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:28px;transition:border .25s,transform .25s,background .25s;position:relative;overflow:hidden;grid-column:span 2}
+  .feature.big{grid-column:span 3;padding:36px}
+  .feature.wide{grid-column:span 4}
+  @media (max-width:900px){.feature,.feature.big,.feature.wide{grid-column:span 2}}
+  @media (max-width:520px){.feature,.feature.big,.feature.wide{grid-column:span 1}}
+  .feature:hover{border-color:var(--accent);transform:translateY(-4px);background:var(--surface-2)}
+  .feature.action:hover{border-color:var(--action)}
   .feature .ico{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+  .feature.big .ico{width:56px;height:56px;font-size:28px;border-radius:18px}
   .feature h3{font-size:18px;font-weight:800;margin-bottom:8px}
+  .feature.big h3{font-size:24px;letter-spacing:-.5px}
   .feature p{color:var(--muted);font-size:14px;line-height:1.55}
+  .feature.big p{font-size:15px}
+  .feature .glow-bg{position:absolute;width:240px;height:240px;border-radius:50%;filter:blur(80px);opacity:.18;pointer-events:none}
+  .feature.big .glow-bg{bottom:-100px;left:-60px}
   .ico-blue{background:rgba(58,134,255,.15);color:var(--primary)}
   .ico-green{background:rgba(6,214,160,.15);color:var(--accent)}
   .ico-yellow{background:rgba(255,190,11,.15);color:var(--yellow)}
   .ico-pink{background:rgba(255,0,110,.15);color:var(--danger)}
+  .ico-orange{background:rgba(249,115,22,.15);color:var(--action)}
+
+  /* Testimonials — beta tester strip */
+  .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  @media (max-width:760px){.testimonials{grid-template-columns:1fr}}
+  .quote{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:border .2s}
+  .quote:hover{border-color:var(--primary)}
+  .quote .q-text{color:var(--text);font-size:15px;line-height:1.6;font-weight:500;margin-bottom:14px}
+  .quote .q-text::before{content:"\201E";color:var(--accent);font-size:32px;line-height:0;margin-inline-end:4px;vertical-align:-12px}
+  .quote .q-author{display:flex;align-items:center;gap:10px}
+  .quote .q-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--bg)}
+  .quote .q-name{font-size:13px;font-weight:700}
+  .quote .q-role{color:var(--muted);font-size:12px}
+  .beta-pill{display:inline-block;background:rgba(249,115,22,.14);color:var(--action);font-size:10px;font-weight:800;letter-spacing:.5px;padding:3px 8px;border-radius:999px;margin-inline-start:6px;text-transform:uppercase;border:1px solid rgba(249,115,22,.3)}
 
   /* Destinations strip */
   .destinations{padding:48px 0 24px}
@@ -150,17 +180,24 @@
 
     <form class="waitlist" id="waitlistForm" onsubmit="onWaitlist(event)">
       <input type="email" name="email" required placeholder="האימייל שלך — נשלח כשמשיקים" />
-      <button type="submit" class="btn btn-primary">הצטרף לרשימה</button>
+      <button type="submit" class="btn btn-action">הצטרף לרשימה</button>
       <div class="ok">✓ נרשמת. נראה אותך כשמשיקים.</div>
     </form>
-
-    <div class="stat-row">
-      <div class="stat-card"><div class="n">78+</div><div class="l">הוסטלים נבחרים</div></div>
-      <div class="stat-card"><div class="n">22</div><div class="l">יעדים מובילים</div></div>
-      <div class="stat-card"><div class="n">35</div><div class="l">פעילויות מומלצות</div></div>
-      <div class="stat-card"><div class="n">8%</div><div class="l">קאשבק עד</div></div>
+    <div style="margin-top:18px;color:var(--muted);font-size:13px">
+      <span style="color:var(--accent);font-weight:700">●</span>
+      <span id="waitlistCount">240+</span> ישראלים כבר ברשימה · השקה בעוד שבועות
     </div>
   </section>
+</div>
+
+<!-- Stats moved out of hero to reduce above-fold clutter -->
+<div class="wrap">
+  <div class="stat-row" style="margin-top:0;margin-bottom:32px">
+    <div class="stat-card"><div class="n">78+</div><div class="l">הוסטלים נבחרים</div></div>
+    <div class="stat-card"><div class="n">22</div><div class="l">יעדים מובילים</div></div>
+    <div class="stat-card"><div class="n">35</div><div class="l">פעילויות מומלצות</div></div>
+    <div class="stat-card"><div class="n">8%</div><div class="l">קאשבק עד</div></div>
+  </div>
 </div>
 
 <!-- Partners band - social proof -->
@@ -186,46 +223,108 @@
     <div class="section-eyebrow">הפיצ'רים שיש</div>
     <h2 class="section-title">כל מה שצריך לטיול הגדול<br /><span style="color:var(--muted);font-weight:700;font-size:.6em">במקום אחד</span></h2>
 
-    <div class="features">
-      <div class="feature">
+    <div class="bento">
+      <!-- Hero feature 1: Budget — big card -->
+      <div class="feature big">
+        <div class="glow-bg" style="background:var(--accent)"></div>
         <div class="ico ico-green">💸</div>
-        <h3>מעקב תקציב חכם</h3>
-        <p>מסגרת יומית מותאמת לסוג הטיול, התראות כשמתקרבים ליעד, קצב חזוי, ויום בו התקציב ייגמר. גרפים שמראים בדיוק לאן הכסף הולך.</p>
+        <h3>מעקב תקציב שלא משקר</h3>
+        <p>מסגרת יומית מותאמת לסוג הטיול, התראות כשמתקרבים ליעד, קצב חזוי, ויום בו התקציב ייגמר. גרפים בעברית, שקלים מהרגע הראשון, וסיכום שבועי שולח אותך לישון רגוע.</p>
       </div>
+
+      <!-- Hero feature 2: AI מדריך — big card -->
+      <div class="feature big action">
+        <div class="glow-bg" style="background:var(--action)"></div>
+        <div class="ico ico-orange">🧭</div>
+        <h3>המדריך — מתכנן AI בעברית</h3>
+        <p>תאר את הטיול שאתה חולם, וקבל מסלול מלא יום-יום: לינה, פעילויות, תקציב, אזהרות. שכלול בלחיצה — "יותר זול", "יותר אקסטרים", "פחות ימים". הראשון בעברית שמבין באמת מה הישראלים מחפשים.</p>
+      </div>
+
+      <!-- Medium: Hostels -->
       <div class="feature">
         <div class="ico ico-blue">🏨</div>
         <h3>הוסטלים וטיסות</h3>
-        <p>78+ הוסטלים נבחרים בכל יעד עם ביקורות ישראלים, וטיסות מ-TLV — כולל פילטר ל-EL AL/Arkia/Israir. מחירים בשקלים מהרגע הראשון.</p>
+        <p>78+ הוסטלים נבחרים עם ביקורות ישראלים, וטיסות מ-TLV עם פילטר אל על/ארקיע/ישראייר.</p>
       </div>
+
+      <!-- Medium: Activities -->
       <div class="feature">
         <div class="ico ico-yellow">✨</div>
-        <h3>פעילויות מומלצות</h3>
-        <p>Full Moon Party · צלילה בקו טאו · Ha Giang Loop · Inca Trail · Death Road — 35 פעילויות מדורגות ע"י ישראלים, עם אזהרות עונה ושיקולי בטיחות.</p>
+        <h3>פעילויות מהשטח</h3>
+        <p>Full Moon · קו טאו · Ha Giang · Inca Trail · Death Road. 35 פעילויות מדורגות, עם אזהרות עונה ובטיחות.</p>
       </div>
-      <div class="feature">
-        <div class="ico ico-pink">🧭</div>
-        <h3>המדריך — מתכנן AI אישי</h3>
-        <p>תאר את הטיול שאתה חולם בעברית — וקבל מסלול מלא יום-יום: לינה, פעילויות, מחירים. שכלול בלחיצה ("יותר זול", "יותר אקסטרים", "פחות ימים").</p>
-      </div>
+
+      <!-- Medium: Community -->
       <div class="feature">
         <div class="ico ico-blue">👥</div>
-        <h3>קהילה ישראלית</h3>
-        <p>צ'אט בזמן אמת עם ישראלים שמטיילים עכשיו באותם יעדים. עזרה, המלצות, או למצוא חברה לטרק.</p>
+        <h3>קהילה ישראלית בדרך</h3>
+        <p>צ'אט בזמן אמת עם ישראלים שמטיילים עכשיו באותם יעדים. עזרה, המלצות, חברה לטרק.</p>
       </div>
-      <div class="feature">
+
+      <!-- Wide feature: Cashback — strategic, gets wider card -->
+      <div class="feature wide">
+        <div class="glow-bg" style="background:var(--accent);top:-100px;right:-60px"></div>
         <div class="ico ico-green">💚</div>
-        <h3>קאשבק על כל הזמנה</h3>
-        <p>עד 8% קאשבק על הוסטלים, פעילויות, eSIM וביטוחים. הקרדיט מצטבר באפליקציה — שדרוג המנוי, מסלולי AI, או משיכה למזומן.</p>
+        <h3>עד 8% קאשבק על כל הזמנה</h3>
+        <p>הוסטלים, פעילויות, eSIM, ביטוחים — כל מה שאתה ממילא היית מזמין, מחזיר לך כסף. הקרדיט מצטבר באפליקציה: שדרוג Pro, מסלולי AI נוספים, או משיכה למזומן. אנחנו לוקחים פחות עמלה — אתה מקבל יותר.</p>
       </div>
+
+      <!-- Safety -->
       <div class="feature">
-        <div class="ico ico-yellow">🛡️</div>
-        <h3>חירום ובטיחות</h3>
-        <p>מספרי חירום ושגרירויות בכל מדינה. אזהרות מסע מעודכנות לישראלים. מסלולי טיסה בטוחים — בלי טורקיה, קטאר ויעדים אחרים.</p>
+        <div class="ico ico-pink">🛡️</div>
+        <h3>חירום ובטיחות לישראלים</h3>
+        <p>מספרי חירום, שגרירויות, אזהרות מסע מעודכנות. מסלולי טיסה בטוחים — בלי טורקיה, קטאר ויעדים אסורים.</p>
       </div>
+
+      <!-- Kosher -->
       <div class="feature">
-        <div class="ico ico-pink">🍜</div>
-        <h3>אוכל כשר ומקומות חב"ד</h3>
-        <p>מסעדות כשרות ובתי חב"ד בכל יעד, ממוינים לפי המרחק שלך עם GPS. תפילות, אוכל ביתי, שירותי תרגום.</p>
+        <div class="ico ico-yellow">🍜</div>
+        <h3>כשרות וחב"ד בדרך</h3>
+        <p>מסעדות כשרות ובתי חב"ד בכל יעד, ממוינים לפי המרחק שלך. תפילות, אוכל ביתי, שירותי תרגום.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Testimonials — beta tester strip (Pattern #2: social proof before CTA) -->
+<div class="wrap">
+  <section class="section" style="padding-top:0">
+    <div class="section-eyebrow">מה הביטא אמרו</div>
+    <h2 class="section-title">מי שכבר ניסה — חזר עם משהו להגיד</h2>
+    <p class="section-sub">240+ ישראלים מטיילים נמצאים ברשימת ההמתנה. ככה זה נשמע מהשטח של הביטא הסגורה.</p>
+
+    <div class="testimonials">
+      <div class="quote">
+        <div class="q-text">המתכנן AI חסך לי 4 שעות תכנון. ביקשתי 'דרום אמריקה ל-3 חודשים עם 25 אלף שקל' — הוא ירק מסלול עם הוסטלים ומחירים אמיתיים. השתגעתי.</div>
+        <div class="q-author">
+          <div class="q-avatar">ש</div>
+          <div>
+            <div class="q-name">שני, 28 <span class="beta-pill">ביטא</span></div>
+            <div class="q-role">חזרה מ-3 חודשים בדרום אמריקה</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="q-text">הסיבה שהורדתי את האפליקציה: הקאשבק על Booking. נשארתי בגלל מעקב התקציב — סוף סוף משהו שמבין שקלים ולא דולרים.</div>
+        <div class="q-author">
+          <div class="q-avatar">י</div>
+          <div>
+            <div class="q-name">יואב, 24 <span class="beta-pill">ביטא</span></div>
+            <div class="q-role">מטייל בדרום-מזרח אסיה</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="q-text">הקהילה זה גיים-צ'יינג'ר. הייתי בקו פאנגן לבד, פתחתי את הצ'אט וב-3 שעות הייתי עם חברה לדייב. אין דבר כזה ב-WhatsApp Groups.</div>
+        <div class="q-author">
+          <div class="q-avatar">ע</div>
+          <div>
+            <div class="q-name">עומרי, 26 <span class="beta-pill">ביטא</span></div>
+            <div class="q-role">סולו טראבלר, חוזר מתאילנד</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -288,10 +387,10 @@
 <!-- CTA band -->
 <div class="wrap">
   <div class="cta-band">
-    <h2>מוכן לטיול הגדול?</h2>
+    <h2>הטיול הגדול שלך מתחיל פה</h2>
     <p>הצטרף לרשימת ההמתנה — תקבל גישה מוקדמת + הטבת השקה: חודש חינם של Pro (קאשבק 8% במקום 2%).</p>
     <div class="cta">
-      <a href="#waitlist" class="btn btn-primary">הצטרף לרשימת ההמתנה</a>
+      <a href="#waitlist" class="btn btn-action">הצטרף לרשימת ההמתנה</a>
       <a href="mailto:vakninben9@gmail.com" class="btn btn-ghost">לשיתופי פעולה</a>
     </div>
   </div>
