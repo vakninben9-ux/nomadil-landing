@@ -61,6 +61,13 @@
   .btn-action{background:var(--action);color:#fff;box-shadow:0 8px 30px rgba(249,115,22,.35)}
   .btn-action:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(249,115,22,.45)}
 
+  /* Store badges */
+  .store-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .store-badge{display:inline-flex;align-items:center;gap:10px;direction:ltr;background:#000;color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:10px 20px;text-decoration:none;font-weight:800;font-size:18px;line-height:1.1;transition:transform .15s,box-shadow .15s,border-color .15s}
+  .store-badge small{display:block;font-size:11px;font-weight:600;opacity:.8;direction:rtl;text-align:left}
+  .store-badge span{text-align:left}
+  .store-badge:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 30px rgba(6,214,160,.25)}
+
   /* Waitlist */
   .waitlist{margin:32px auto 0;max-width:480px;display:flex;gap:8px;flex-wrap:wrap}
   .waitlist input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:15px;font-family:inherit;text-align:right;direction:rtl}
@@ -168,7 +175,7 @@
       <a href="#features">פיצ'רים</a>
       <a href="/blog/">בלוג</a>
       <a href="#how">איך זה עובד</a>
-      <a href="#waitlist">הצטרף</a>
+      <a href="#download">הורדה</a>
       <a href="mailto:vakninben9@gmail.com">צור קשר</a>
     </nav>
   </div>
@@ -180,18 +187,17 @@
       <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3BaHxogueDC6HPzRQKq12AmLlHD/hf_20260812_130616_2e609197-b7d7-4252-a02d-f5366eecef5c.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
-    <div class="hero-pill"><span class="dot"></span>בקרוב באפסטור · 2026</div>
+    <div class="hero-pill"><span class="dot"></span>זמינה עכשיו ב-App Store וב-Google Play</div>
     <h1>נבנתה בשביל<br /><span class="grad">הטיול הגדול שלך</span></h1>
     <p>אפליקציית המובייל היחידה שנבנתה במיוחד לישראלים שיוצאים לטיול הגדול. מתכנן AI אישי בונה לך מסלול שלם, מעקב תקציב חכם בשקלים, וקהילה ישראלית חיה איתך בדרך.</p>
 
-    <form class="waitlist" id="waitlistForm" onsubmit="onWaitlist(event)">
-      <input type="email" name="email" required placeholder="האימייל שלך — נשלח כשמשיקים" />
-      <button type="submit" class="btn btn-action">הצטרף לרשימה</button>
-      <div class="ok">✓ נרשמת. נראה אותך כשמשיקים.</div>
-    </form>
+    <div class="store-badges" id="download">
+      <a class="store-badge" href="https://apps.apple.com/il/app/nomadil/id6810340798" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span><small>הורידו מ-</small>App Store</span></a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.nomadil.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.3 12l-9.7 10.2c-.36-.2-.6-.6-.6-1.07V2.87c0-.47.24-.87.6-1.07z"/><path fill="#FFCE00" d="m16.6 15.3-3.3-3.3 3.3-3.3 3.8 2.17c.98.56.98 1.7 0 2.26z"/><path fill="#FF3A44" d="M16.6 15.3 13.3 12 3.6 22.2c.33.18.75.18 1.15-.05z"/><path fill="#00F076" d="M16.6 8.7 4.75 1.85c-.4-.23-.82-.23-1.15-.05L13.3 12z"/></svg><span><small>זמינה ב-</small>Google Play</span></a>
+    </div>
     <div style="margin-top:18px;color:var(--muted);font-size:13px">
       <span style="color:var(--accent);font-weight:700">●</span>
-      הצטרפו לרשימה · מהראשונים שיקבלו גישה עם ההשקה
+      חינם להורדה · בעברית · לאנדרואיד ולאייפון
     </div>
   </section>
 </div>
@@ -297,7 +303,7 @@
   <section class="section" style="padding-top:0">
     <div class="section-eyebrow">למה בנינו את זה</div>
     <h2 class="section-title">כלי אחד שבאמת מבין טיול ישראלי</h2>
-    <p class="section-sub">NomadIL בהקמה — נבנית עכשיו יחד עם קהילת התרמילאים. הצטרפו לרשימה ותהיו מהראשונים לקבל גישה.</p>
+    <p class="section-sub">NomadIL נבנתה יחד עם קהילת התרמילאים — והיא כבר זמינה להורדה.</p>
 
     <div class="testimonials">
       <div class="quote">
@@ -394,11 +400,12 @@
 <div class="wrap">
   <div class="cta-band">
     <h2>הטיול הגדול שלך מתחיל פה</h2>
-    <p>הצטרף לרשימת ההמתנה — תקבל גישה מוקדמת + הטבת השקה: חודש חינם של Pro (AI בלי הגבלה, ניתוח הוצאות ועוד).</p>
-    <div class="cta">
-      <a href="#waitlist" class="btn btn-action">הצטרף לרשימת ההמתנה</a>
-      <a href="mailto:vakninben9@gmail.com" class="btn btn-ghost">לשיתופי פעולה</a>
+    <p>מסלולים, תקציב, לינה וקהילה ישראלית — הכל באפליקציה אחת. הורידו עכשיו, חינם.</p>
+    <div class="store-badges">
+      <a class="store-badge" href="https://apps.apple.com/il/app/nomadil/id6810340798" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.96 2.79 1.02.08 2.05-.51 2.68-1.27z"/></svg><span><small>הורידו מ-</small>App Store</span></a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.nomadil.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#00D7FE" d="M3.6 1.8 13.3 12l-9.7 10.2c-.36-.2-.6-.6-.6-1.07V2.87c0-.47.24-.87.6-1.07z"/><path fill="#FFCE00" d="m16.6 15.3-3.3-3.3 3.3-3.3 3.8 2.17c.98.56.98 1.7 0 2.26z"/><path fill="#FF3A44" d="M16.6 15.3 13.3 12 3.6 22.2c.33.18.75.18 1.15-.05z"/><path fill="#00F076" d="M16.6 8.7 4.75 1.85c-.4-.23-.82-.23-1.15-.05L13.3 12z"/></svg><span><small>זמינה ב-</small>Google Play</span></a>
     </div>
+    <div class="cta" style="margin-top:16px"><a href="mailto:vakninben9@gmail.com" class="btn btn-ghost">לשיתופי פעולה</a></div>
   </div>
 </div>
 
