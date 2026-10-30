@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NomadIL — האפליקציה של הטיול הגדול</title>
 <meta name="description" content="NomadIL — אפליקציית המובייל לטיילים ישראלים: מתכנן AI חכם, מעקב תקציב, הוסטלים וטיסות במחירים הכי טובים, קהילה ישראלית בדרך." />
-<meta name="theme-color" content="#070B14" />
+<meta name="theme-color" content="#0F3D3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 250%22%3E%3Cpath d=%22M100 240 C100 240 12 140 12 92 A88 88 0 0 1 188 92 C188 140 100 240 100 240 Z%22 fill=%22%230F3D3E%22/%3E%3Ccircle cx=%22100%22 cy=%2292%22 r=%2258%22 fill=%22%23FFFFFF%22/%3E%3Cpath d=%22M50 128 L86 76 L104 100 L118 84 L150 128 Z%22 fill=%22%230F3D3E%22/%3E%3Ccircle cx=%22122%22 cy=%2266%22 r=%2213%22 fill=%22%23E8743B%22/%3E%3C/svg%3E" />
 <meta property="og:title" content="NomadIL — האפליקציה של הטיול הגדול" />
 <meta property="og:description" content="מתכנן AI · מעקב תקציב · הוסטלים · טיסות · קהילה ישראלית. לטיול הגדול של הישראלים." />
 <meta property="og:type" content="website" />
@@ -13,19 +14,19 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#070B14; --surface:#0F1524; --surface-2:#141C30;
-    --primary:#3A86FF; --accent:#06D6A0; --action:#F97316;
-    --yellow:#FFBE0B; --danger:#FF006E;
-    --text:#fff; --muted:#A8B2C4; --border:#1F2740;
+    --bg:#0B2E2F; --surface:#0F3D3E; --surface-2:#144A4B;
+    --primary:#F2E8D5; --accent:#E8743B; --action:#E8743B;
+    --yellow:#F2C46D; --danger:#FF006E;
+    --text:#fff; --muted:#B5C9C8; --border:#1E5253;
     --radius-lg:18px; --radius-md:12px; --radius-xl:24px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Heebo",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-family:"Rubik",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
     background:var(--bg);color:var(--text);line-height:1.6;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
@@ -34,10 +35,10 @@
   .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
 
   /* Header */
-  header{padding:24px 0;position:sticky;top:0;backdrop-filter:blur(12px);background:rgba(7,11,20,.8);z-index:10;border-bottom:1px solid transparent;transition:border .25s}
+  header{padding:24px 0;position:sticky;top:0;backdrop-filter:blur(12px);background:rgba(11,46,47,.8);z-index:10;border-bottom:1px solid transparent;transition:border .25s}
   header.scrolled{border-bottom-color:var(--border)}
   .header-row{display:flex;align-items:center;justify-content:space-between}
-  .brand{font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.5px}
+  .brand{font-size:26px;font-weight:900;color:var(--text);display:inline-flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:-.5px}
   .nav a{color:var(--muted);text-decoration:none;margin-inline-start:22px;font-size:14px;font-weight:600;transition:color .2s}
   .nav a:hover{color:var(--text)}
   @media (max-width:640px){.nav{display:none}}
@@ -45,35 +46,29 @@
   /* Hero */
   .hero{text-align:center;padding:120px 0 88px;position:relative;overflow:hidden;border-radius:0 0 32px 32px}
   .hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,20,.55) 0%,rgba(7,11,20,.75) 55%,var(--bg) 100%);z-index:-1}
-  .hero-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(58,134,255,.18);color:#fff;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid rgba(58,134,255,.35);margin-bottom:24px;backdrop-filter:blur(6px)}
-  .hero-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(6,214,160,.18);animation:pulse 2s infinite}
-  @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(6,214,160,0)}}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,46,47,.55) 0%,rgba(11,46,47,.75) 55%,var(--bg) 100%);z-index:-1}
+  .hero-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(242,232,213,.18);color:#fff;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid rgba(242,232,213,.35);margin-bottom:24px;backdrop-filter:blur(6px)}
+  .hero-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(232,116,59,.18);animation:pulse 2s infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(232,116,59,0)}}
   .hero h1{font-size:clamp(36px,6.5vw,64px);font-weight:900;letter-spacing:-1.5px;line-height:1.1;text-shadow:0 2px 24px rgba(0,0,0,.4)}
-  .hero h1 .grad{background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1 .grad{color:var(--accent)}
   .hero p{color:#fff;opacity:.88;font-size:clamp(16px,2vw,19px);margin:22px auto 0;max-width:620px;text-shadow:0 1px 12px rgba(0,0,0,.5)}
   .cta{display:inline-flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center}
   .btn{padding:14px 28px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;border:1px solid transparent;transition:transform .15s,box-shadow .15s;cursor:pointer;font-family:inherit}
-  .btn-primary{background:var(--accent);color:var(--bg);box-shadow:0 8px 30px rgba(6,214,160,.35)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(6,214,160,.45)}
+  .btn-primary{background:var(--accent);color:var(--bg);box-shadow:0 8px 30px rgba(232,116,59,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(232,116,59,.45)}
   .btn-ghost{border-color:var(--border);color:var(--text);background:transparent}
   .btn-ghost:hover{border-color:var(--action);color:var(--action)}
-  .btn-action{background:var(--action);color:#fff;box-shadow:0 8px 30px rgba(249,115,22,.35)}
-  .btn-action:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(249,115,22,.45)}
+  .btn-action{background:var(--action);color:var(--bg);box-shadow:0 8px 30px rgba(232,116,59,.35)}
+  .btn-action:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(232,116,59,.45)}
 
   /* Store badges */
   .store-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
   .store-badge{display:inline-flex;align-items:center;gap:10px;direction:ltr;background:#000;color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:10px 20px;text-decoration:none;font-weight:800;font-size:18px;line-height:1.1;transition:transform .15s,box-shadow .15s,border-color .15s}
   .store-badge small{display:block;font-size:11px;font-weight:600;opacity:.8;direction:rtl;text-align:left}
   .store-badge span{text-align:left}
-  .store-badge:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 30px rgba(6,214,160,.25)}
+  .store-badge:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 10px 30px rgba(232,116,59,.25)}
 
-  /* Waitlist */
-  .waitlist{margin:32px auto 0;max-width:480px;display:flex;gap:8px;flex-wrap:wrap}
-  .waitlist input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:15px;font-family:inherit;text-align:right;direction:rtl}
-  .waitlist input:focus{outline:none;border-color:var(--accent)}
-  .waitlist .ok{color:var(--accent);font-size:13px;margin-top:10px;width:100%;display:none}
-  .waitlist.sent .ok{display:block}
 
   /* Stats */
   .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:64px auto 0;max-width:780px}
@@ -107,11 +102,11 @@
   .feature.big p{font-size:15px}
   .feature .glow-bg{position:absolute;width:240px;height:240px;border-radius:50%;filter:blur(80px);opacity:.18;pointer-events:none}
   .feature.big .glow-bg{bottom:-100px;left:-60px}
-  .ico-blue{background:rgba(58,134,255,.15);color:var(--primary)}
-  .ico-green{background:rgba(6,214,160,.15);color:var(--accent)}
+  .ico-blue{background:rgba(242,232,213,.15);color:var(--primary)}
+  .ico-green{background:rgba(232,116,59,.15);color:var(--accent)}
   .ico-yellow{background:rgba(255,190,11,.15);color:var(--yellow)}
   .ico-pink{background:rgba(255,0,110,.15);color:var(--danger)}
-  .ico-orange{background:rgba(249,115,22,.15);color:var(--action)}
+  .ico-orange{background:rgba(232,116,59,.15);color:var(--action)}
 
   /* Testimonials — beta tester strip */
   .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
@@ -121,10 +116,10 @@
   .quote .q-text{color:var(--text);font-size:15px;line-height:1.6;font-weight:500;margin-bottom:14px}
   .quote .q-text::before{content:"\201E";color:var(--accent);font-size:32px;line-height:0;margin-inline-end:4px;vertical-align:-12px}
   .quote .q-author{display:flex;align-items:center;gap:10px}
-  .quote .q-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--bg)}
+  .quote .q-avatar{width:36px;height:36px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--bg)}
   .quote .q-name{font-size:13px;font-weight:700}
   .quote .q-role{color:var(--muted);font-size:12px}
-  .beta-pill{display:inline-block;background:rgba(249,115,22,.14);color:var(--action);font-size:10px;font-weight:800;letter-spacing:.5px;padding:3px 8px;border-radius:999px;margin-inline-start:6px;text-transform:uppercase;border:1px solid rgba(249,115,22,.3)}
+  .beta-pill{display:inline-block;background:rgba(232,116,59,.14);color:var(--action);font-size:10px;font-weight:800;letter-spacing:.5px;padding:3px 8px;border-radius:999px;margin-inline-start:6px;text-transform:uppercase;border:1px solid rgba(232,116,59,.3)}
 
   /* Destinations strip */
   .destinations{padding:48px 0 24px}
@@ -150,7 +145,7 @@
   .step p{color:var(--muted);font-size:14px;line-height:1.55}
 
   /* CTA band */
-  .cta-band{background:linear-gradient(135deg,#0F1524 0%,#1a2440 100%);border:1px solid var(--border);border-radius:24px;padding:64px 32px;text-align:center;margin:64px 0}
+  .cta-band{background:linear-gradient(135deg,#0F3D3E 0%,#144A4B 100%);border:1px solid var(--border);border-radius:24px;padding:64px 32px;text-align:center;margin:64px 0}
   .cta-band h2{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-1px}
   .cta-band p{color:var(--muted);max-width:520px;margin:16px auto 0;font-size:16px}
 
@@ -161,7 +156,7 @@
   footer .links{display:flex;gap:24px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
 
   /* Decorative glow */
-  .glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(58,134,255,.15) 0%,transparent 60%);pointer-events:none;z-index:-1}
+  .glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:min(600px,100vw);height:600px;background:radial-gradient(circle,rgba(242,232,213,.15) 0%,transparent 60%);pointer-events:none;z-index:-1}
 </style>
 </head>
 <body>
@@ -170,7 +165,7 @@
 
 <header id="header">
   <div class="wrap header-row">
-    <div class="brand">NomadIL</div>
+    <div class="brand"><svg width="26" height="32" viewBox="0 0 200 250" aria-hidden="true"><path d="M100 240 C100 240 12 140 12 92 A88 88 0 0 1 188 92 C188 140 100 240 100 240 Z" fill="#E8743B"/><circle cx="100" cy="92" r="58" fill="#FFFFFF"/><path d="M50 128 L86 76 L104 100 L118 84 L150 128 Z" fill="#0F3D3E"/><circle cx="122" cy="66" r="13" fill="#E8743B"/></svg><span dir="ltr">Nomad<span style="color:var(--accent)">IL</span></span></div>
     <nav class="nav">
       <a href="#features">פיצ'רים</a>
       <a href="/blog/">בלוג</a>
@@ -430,25 +425,6 @@
     header.classList.toggle('scrolled', window.scrollY > 12);
   }, { passive: true });
 
-  // Waitlist — stores locally so we don't lose any signups before
-  // wiring a real backend (Mailchimp/Resend/Convertkit) post-launch.
-  function onWaitlist(e){
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value.trim();
-    if (!email) return;
-    try {
-      const list = JSON.parse(localStorage.getItem('nomadil_waitlist') || '[]');
-      list.push({ email, at: new Date().toISOString() });
-      localStorage.setItem('nomadil_waitlist', JSON.stringify(list));
-    } catch {}
-    // Also opens a mailto so the user can verify the address sticks —
-    // until we plug in a real list service.
-    window.location.href = 'mailto:vakninben9@gmail.com?subject=' +
-      encodeURIComponent('NomadIL waitlist signup') +
-      '&body=' + encodeURIComponent('Hi Ben, please add me: ' + email);
-    form.classList.add('sent');
-  }
 </script>
 </body>
 </html>
